@@ -12,3 +12,11 @@
  * @property {string} price - Price
  * @property {Array.<vehicleMedia>} media - Array of vehicle images
  */
+
+/**
+ * @typedef {Object} vehicleBasicPayload
+ * @property {string} id - ID of the vehicle
+ * @property {string} modelYear - The model year of the vehicle
+ * @property {string} apiUrl - API URL for price, description & other details
+ * @property {Array.<vehicleMedia>} media - Array of vehicle images
+ */

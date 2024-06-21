@@ -1,0 +1,81 @@
+.VehicleCard {
+    text-align: center;
+    display: flex;
+    width: 460px;
+    font-size: 0.8rem;
+
+    header {
+        display: flex;
+        letter-spacing: 0.3rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .ContentContainer {
+        text-align: left;
+        padding: 0 12px;
+        flex: 1;
+        border: none;
+
+        .Pricing {
+            letter-spacing: .1rem;
+        }
+
+        .Description {
+            letter-spacing: .04rem;
+        }
+    }
+
+    .ImageContainer {
+        height: 100%;
+
+        .ImageWide {
+            display: none;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ImageSquare {
+            width: 140px;
+            aspect-ratio: 1 / 1;
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .VehicleCard {
+        flex-direction: column;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+
+        header {
+            justify-content: center;
+
+            h2 {
+                padding: 3px;
+                border-top: 2px solid #000;
+                border-bottom: 2px solid #000;
+            }
+        }
+
+        .ImageContainer {
+            height: auto;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+
+            .ImageWide {
+                display: block;
+            }
+
+            .ImageSquare {
+                display: none;
+            }
+        }
+
+        .ContentContainer {
+            text-align: center;
+        }
+    }
+}

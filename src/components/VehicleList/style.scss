@@ -1,3 +1,39 @@
 .VehicleList {
-  width: 100%;
+    width: 100%;
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    > :not(:last-child) {
+        .ContentContainer {
+            border-bottom: 1px solid #eee;
+        }
+    }
+
+    >* {
+
+        width: 100%;
+        max-width: 800px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .VehicleList {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .VehicleList {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1200px) {
+    .VehicleList {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }

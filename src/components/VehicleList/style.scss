@@ -1,3 +1,7 @@
+@import '../../styles/variables.scss';
+
+$VehicleListColumns: 1;
+
 .VehicleList {
     width: 100%;
     display: grid;
@@ -12,27 +16,30 @@
     }
 
     >* {
-
         width: 100%;
         max-width: 800px;
     }
-
 }
 
-@media (min-width: 768px) {
+@media (min-width: $ScreenSizeTablet) {
     .VehicleList {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 
+        > :not(:last-child) {
+            .ContentContainer {
+                border-bottom: none;
+            }
+        }
+    }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $ScreenSizeDesktop) {
     .VehicleList {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $ScreenSizeLargeDesktop) {
     .VehicleList {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }

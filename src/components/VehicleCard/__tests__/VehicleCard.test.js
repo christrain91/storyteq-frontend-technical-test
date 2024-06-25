@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import VehicleCard from '..';
 
 describe('<VehicleCard /> Tests', () => {
@@ -13,5 +13,19 @@ describe('<VehicleCard /> Tests', () => {
     expect(queryByTestId('vehicle-name').innerHTML).toBe('FTYPE');
     expect(queryByTestId('vehicle-pricing').innerHTML).toBe('From £36,000');
     expect(queryByTestId('vehicle-description').innerHTML).toBe('description');
+  });
+
+  it('Should trigger the onSelect handler when clicked', () => {
+    const vehicle = {
+      id: 'ftype', price: '£36,000', media: [{ url: 'http://sample.com/image', name: 'name' }], description: 'description'
+    };
+    const onSelect = jest.fn();
+    const { queryByTestId } = render(<VehicleCard vehicle={vehicle} onSelect={onSelect} />);
+
+    const card = queryByTestId('vehicle');
+
+    expect(onSelect).not.toHaveBeenCalled();
+    fireEvent.click(card);
+    expect(onSelect).toHaveBeenCalled();
   });
 });

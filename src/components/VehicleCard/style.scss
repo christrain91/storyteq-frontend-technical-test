@@ -1,13 +1,18 @@
 @import '../../styles/animations.scss';
+@import '../../styles/variables.scss';
 
 
 .VehicleCard {
-    text-align: center;
-    display: flex;
     width: 460px;
     font-size: 0.8rem;
-
+    cursor: pointer;
     animation: fadeIn 0.7s ease-out forwards;
+
+    .VehicleCardContent {
+        width: 100%;
+        text-align: center;
+        display: flex;
+    }
 
     header {
         display: flex;
@@ -43,6 +48,8 @@
         height: 100%;
         aspect-ratio: 1 / 1;
         width: 120px;
+        margin: 0;
+        overflow: hidden;
 
         img {
             object-fit: cover;
@@ -60,10 +67,30 @@
     }
 }
 
-@media screen and (min-width: 768px) {
+// Hover effect
+.VehicleCard {
+    img {
+        -webkit-transition: .4s ease-in-out;
+        transition: .4s ease-in-out;
+    }
+}
+
+.VehicleCard:hover {
+    .ImageContainer>img {
+        -webkit-transform: scale(1.08);
+        transform: scale(1.08);
+
+    }
+}
+
+// Responsive design
+@media screen and (min-width: $ScreenSizeTablet) {
     .VehicleCard {
-        flex-direction: column;
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+
+        .VehicleCardContent {
+            flex-direction: column;
+        }
 
         header {
             justify-content: center;

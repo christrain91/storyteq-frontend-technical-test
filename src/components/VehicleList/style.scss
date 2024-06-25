@@ -4,6 +4,7 @@ $VehicleListColumns: 1;
 
 .VehicleList {
     width: 100%;
+    list-style-type: none;
     display: grid;
     flex-wrap: wrap;
     justify-content: center;

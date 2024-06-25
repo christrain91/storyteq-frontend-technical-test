@@ -3,7 +3,8 @@ import './style.scss';
 
 /**
  * @typedef {Object} VehicleCardProps
- * @property {string} vehicle - The vehicle to display
+ * @property {VehicleSummaryPayload} vehicle - The vehicle to display
+ * @property {(() => void)} onSelect -  On select handler
  */
 
 /**
@@ -12,29 +13,31 @@ import './style.scss';
  * @param {VehicleCardProps} props
  * @returns {React.ReactElement}
  */
-export default function VehicleCard ({ vehicle }) {
+export default function VehicleCard ({ vehicle, onSelect }) {
   const wideImage = vehicle.media[0];
   const squareImage = vehicle.media[vehicle.media.length - 1];
 
   return (
-    <article data-testid="vehicle" className="VehicleCard">
-      <div data-testid="vehicle-image-container" className="ImageContainer">
-        <img className="ImageWide" data-testid="vehicle-image-wide" src={wideImage.url} alt={wideImage.name} />
-        <img className="ImageSquare" data-testid="vehicle-image-square" src={squareImage.url} alt={squareImage.name} />
+    <li className="VehicleCard">
+      <div data-testid="vehicle" className="VehicleCardContent" onClick={onSelect} role="presentation">
+        <figure data-testid="vehicle-image-container" className="ImageContainer">
+          <img className="ImageWide" data-testid="vehicle-image-wide" src={wideImage.url} alt={wideImage.name} />
+          <img className="ImageSquare" data-testid="vehicle-image-square" src={squareImage.url} alt={squareImage.name} />
+        </figure>
+        <div className="ContentContainer">
+          <header>
+            <h2 data-testid="vehicle-name">{vehicle.id.toUpperCase()}</h2>
+          </header>
+          <span data-testid="vehicle-pricing" className="Pricing">
+            From
+            {' '}
+            {vehicle.price}
+          </span>
+          <p data-testid="vehicle-description" className="Description">
+            {vehicle.description}
+          </p>
+        </div>
       </div>
-      <div className="ContentContainer">
-        <header>
-          <h2 data-testid="vehicle-name">{vehicle.id.toUpperCase()}</h2>
-        </header>
-        <span data-testid="vehicle-pricing" className="Pricing">
-          From
-          {' '}
-          {vehicle.price}
-        </span>
-        <p data-testid="vehicle-description" className="Description">
-          {vehicle.description}
-        </p>
-      </div>
-    </article>
+    </li>
   );
 }

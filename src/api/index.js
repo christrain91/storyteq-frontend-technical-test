@@ -6,8 +6,8 @@ const MAIN_ENDPOINT = '/api/vehicles.json';
 /**
  * Get the final data for a given vehicle
  *
- * @param {vehicleBasicPayload} vehicle The vehicle to get the final data for
- * @returns {Promise<vehicleSummaryPayload | null>}
+ * @param {VehicleBasicPayload} vehicle The vehicle to get the final data for
+ * @returns {Promise<VehicleSummaryPayload | null>}
  */
 async function getVehicleData (vehicle) {
   const data = await request(vehicle.apiUrl).catch(() => null);
@@ -25,7 +25,7 @@ async function getVehicleData (vehicle) {
 /**
  * Get the top level vehicles data from the main endpoint
  *
- * @returns {Promise<Array.<vehicleBasicPayload>>}
+ * @returns {Promise<Array.<VehicleBasicPayload>>}
  */
 function getTopLevelVehiclesData() {
   return request(MAIN_ENDPOINT);
@@ -34,7 +34,7 @@ function getTopLevelVehiclesData() {
 /**
  * Pull vehicles information
  *
- * @return {Promise<Array.<vehicleSummaryPayload>>}
+ * @return {Promise<Array.<VehicleSummaryPayload>>}
  */
 export default async function getData() {
   const data = await getTopLevelVehiclesData();

@@ -44,8 +44,10 @@
     "webpack-dev-server": "3.11.0"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.6"
   },
   "jest": {
     "roots": [
@@ -53,7 +55,10 @@
     ],
     "moduleNameMapper": {
       "\\.(scss)$": "<rootDir>/src/__mocks__/styleMock.js"
-    }
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
   },
   "browserslist": [
     "last 2 chrome versions"

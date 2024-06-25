@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from '../Modal';
+import { toTitleCase } from '../../lib/util/string';
 
 import './styles.scss';
 
@@ -52,7 +53,7 @@ function VehicleDetailItem ({ label, values }) {
       <ul>
         {values.map((value) => (
           <li key={value}>
-            <Tag>{value}</Tag>
+            <Tag>{toTitleCase(value)}</Tag>
           </li>
         ))}
       </ul>

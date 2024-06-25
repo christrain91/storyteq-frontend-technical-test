@@ -1,134 +1,138 @@
-@import '../../styles/animations.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/animations.scss";
+
+@import "../../styles/variables.scss";
 
 
 .VehicleCard {
-    width: 460px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    animation: fadeIn 0.7s ease-out forwards;
+  animation: fadeIn .7s ease-out forwards;
+  cursor: pointer;
+  font-size: .8rem;
+  width: 460px;
 
-    .VehicleCardContent {
-        width: 100%;
-        text-align: center;
-        display: flex;
+  .VehicleCardContent {
+    display: flex;
+    text-align: center;
+    width: 100%;
+  }
+
+  header {
+    color: #000;
+    display: flex;
+    font-size: .8rem;
+    font-weight: bold;
+    letter-spacing: .3rem;
+    margin-bottom: 0;
+
+    h2 {
+      margin-bottom: 2px;
+    }
+  }
+
+  .ContentContainer {
+    flex: 1;
+    padding-left: 18px;
+    text-align: left;
+
+    .Pricing {
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .1rem;
     }
 
-    header {
-        display: flex;
-        letter-spacing: 0.3rem;
-        font-size: 0.8rem;
-        font-weight: bold;
-        color: #000;
-        margin-bottom: 0;
+    .Description {
+      font-size: .7rem;
+      letter-spacing: .03rem;
+    }
+  }
 
-        h2 {
-            margin-bottom: 2px;
-        }
+  .ImageContainer {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    width: 120px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
     }
 
-    .ContentContainer {
-        text-align: left;
-        padding-left: 18px;
-        flex: 1;
-
-        .Pricing {
-            letter-spacing: .1rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .Description {
-            letter-spacing: .03rem;
-            font-size: 0.7rem;
-        }
+    .ImageWide {
+      display: none;
     }
 
-    .ImageContainer {
-        height: 100%;
-        aspect-ratio: 1 / 1;
-        width: 120px;
-        margin: 0;
-        overflow: hidden;
-
-        img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-
-        .ImageWide {
-            display: none;
-        }
-
-        .ImageSquare {
-            display: block;
-        }
+    .ImageSquare {
+      display: block;
     }
+  }
 }
 
 // Hover effect
 .VehicleCard {
-    img {
-        -webkit-transition: .4s ease-in-out;
-        transition: .4s ease-in-out;
-    }
+
+  img {
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+  }
 }
 
 .VehicleCard:hover {
-    .ImageContainer>img {
-        -webkit-transform: scale(1.08);
-        transform: scale(1.08);
 
-    }
+  .ImageContainer>img {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+
+  }
 }
 
 // Responsive design
-@media screen and (min-width: $ScreenSizeTablet) {
-    .VehicleCard {
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+@media screen and (min-width: $screen-size-tablet) {
 
-        .VehicleCardContent {
-            flex-direction: column;
-        }
+  .VehicleCard {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);
 
-        header {
-            justify-content: center;
-
-            h2 {
-                padding: 2px;
-                border-top: 1px solid #000;
-                border-bottom: 1px solid #000;
-                margin-bottom: 20px;
-            }
-        }
-
-        .ImageContainer {
-            height: auto;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-
-            .ImageWide {
-                display: block;
-            }
-
-            .ImageSquare {
-                display: none;
-            }
-        }
-
-        .ContentContainer {
-            text-align: center;
-            padding: 2px 12px;
-
-            .Pricing {
-                color: #555;
-                font-weight: normal;
-            }
-
-            .Description {
-                font-size: 0.85rem;
-            }
-        }
+    .VehicleCardContent {
+      flex-direction: column;
     }
+
+    header {
+      justify-content: center;
+
+      h2 {
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
+        margin-bottom: 20px;
+        padding: 2px;
+      }
+    }
+
+    .ImageContainer {
+      aspect-ratio: 16 / 9;
+      height: auto;
+      width: 100%;
+
+      .ImageWide {
+        display: block;
+      }
+
+      .ImageSquare {
+        display: none;
+      }
+    }
+
+    .ContentContainer {
+      padding: 2px 12px;
+      text-align: center;
+
+      .Pricing {
+        color: #555;
+        font-weight: normal;
+      }
+
+      .Description {
+        font-size: .85rem;
+      }
+    }
+  }
 }

@@ -1,16 +1,16 @@
 .icon-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    margin: 0;
-    display: flex;
-    line-height: 1;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
+  align-items: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  padding: 2px;
 
-    :focus {
-        outline: none;
-    }
+  :focus {
+    outline: none;
+  }
 }

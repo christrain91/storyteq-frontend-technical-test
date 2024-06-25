@@ -1,23 +1,24 @@
 .root {
-    margin: 0px;
-    padding: 0px;
-    z-index: 12;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    color: #666;
+  color: #666;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0px;
+  padding: 0px;
+  z-index: 12;
 }
 
 @media screen and (min-width: 768px) {
-    .root {
-        margin: 14px;
-        padding: 12px;
-    }
+
+  .root {
+    margin: 14px;
+    padding: 12px;
+  }
 }
 
 ul,
 li {
-    margin: 0;
-    padding: 0;
-    text-indent: 0;
-    list-style-type: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
 }

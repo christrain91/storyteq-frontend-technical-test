@@ -1,12 +1,12 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 .LoadingSpinner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 
-    path {
-        stroke: $ColorPrimary;
-        stroke-width: 8px;
-    }
+  path {
+    stroke: $color-primary;
+    stroke-width: 8px;
+  }
 }

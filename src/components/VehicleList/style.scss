@@ -1,47 +1,50 @@
-@import '../../styles/variables.scss';
-
-$VehicleListColumns: 1;
+@import "../../styles/variables.scss";
 
 .VehicleList {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  justify-content: center;
+  list-style-type: none;
+  width: 100%;
+
+  > :not(:last-child) {
+
+    .ContentContainer {
+      border-bottom: 1px solid #eee;
+    }
+  }
+
+  >* {
+    max-width: 800px;
     width: 100%;
-    list-style-type: none;
-    display: grid;
-    flex-wrap: wrap;
-    justify-content: center;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: $screen-size-tablet) {
+
+  .VehicleList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     > :not(:last-child) {
-        .ContentContainer {
-            border-bottom: 1px solid #eee;
-        }
-    }
 
-    >* {
-        width: 100%;
-        max-width: 800px;
+      .ContentContainer {
+        border-bottom: 0;
+      }
     }
+  }
 }
 
-@media (min-width: $ScreenSizeTablet) {
-    .VehicleList {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (min-width: $screen-size-desktop) {
 
-        > :not(:last-child) {
-            .ContentContainer {
-                border-bottom: none;
-            }
-        }
-    }
+  .VehicleList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-@media (min-width: $ScreenSizeDesktop) {
-    .VehicleList {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
+@media (min-width: $screen-size-large-desktop) {
 
-@media (min-width: $ScreenSizeLargeDesktop) {
-    .VehicleList {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+  .VehicleList {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }

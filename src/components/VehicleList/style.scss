@@ -8,6 +8,12 @@
   list-style-type: none;
   width: 100%;
 
+  @for $i from 1 through 10 {
+    .VehicleCard:nth-child(#{$i}n) {
+      animation-delay: #{$i * .1}s;
+    }
+  }
+
   > :not(:last-child) {
 
     .ContentContainer {

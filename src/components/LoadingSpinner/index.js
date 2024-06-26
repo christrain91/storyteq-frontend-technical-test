@@ -3,8 +3,8 @@ import './style.scss';
 
 /**
  * @typedef {Object} LoadingSpinnerProps
- * @property {number} [size] - The size of the spinner
- * @property {number} [duration] - The duration of the spinner animation
+ * @property {number} [size] The size of the spinner
+ * @property {number} [duration] The duration of the spinner animation
  */
 
 /**

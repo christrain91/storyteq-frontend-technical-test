@@ -8,6 +8,20 @@ describe('string utils', () => {
       const result = composeTemplateString(template, data);
       expect(result).toBe('Hello John, welcome to London');
     });
+
+    it('should not replace placeholders with data of the wrong type', () => {
+      const template = 'Hello $name, welcome to $place';
+      const data = { name: 'John', place: [1, 2, 3] };
+      const result = composeTemplateString(template, data);
+      expect(result).toBe('Hello John, welcome to ');
+    });
+
+    it('Should not remove placeholders where no matching data is provided', () => {
+      const template = 'Hello that will be $5 please';
+      const data = {};
+      const result = composeTemplateString(template, data);
+      expect(result).toBe('Hello that will be $5 please');
+    });
   });
 
   describe('toTitleCase', () => {

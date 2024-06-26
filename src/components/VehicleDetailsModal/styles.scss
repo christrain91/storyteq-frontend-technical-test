@@ -1,49 +1,26 @@
-@import "../../styles/variables.scss";
-
 dialog {
 
-  max-width: 400px;
+    max-width: 400px;
 
-  .vehicle-image {
-    margin: 0;
-    width: 100%;
+    .vehicle-image {
+        margin: 0;
+        width: 100%;
 
-    img {
-      height: auto;
-      width: 100%;
+        img {
+            height: auto;
+            width: 100%;
+        }
     }
-  }
 
-  .vehicle-details {
-    padding: 0 20px;
+    .vehicle-details {
+        padding: 0 20px;
 
 
-    .vehicle-emissions {
-      color: #666;
-      font-size: .9rem;
-      text-align: right;
-      width: 100%;
+        .vehicle-emissions {
+            color: #666;
+            font-size: .9rem;
+            text-align: right;
+            width: 100%;
+        }
     }
-  }
-}
-
-
-.tag {
-  background-color: $color-primary;
-  border-radius: 16px;
-  color: $color-primary-text;
-  font-size: .8rem;
-  padding: 4px 8px;
-}
-
-.vehicle-detail-item {
-
-  ul {
-    display: flex;
-    gap: 4px;
-  }
-
-  h4 {
-    margin-bottom: 10px;
-  }
 }

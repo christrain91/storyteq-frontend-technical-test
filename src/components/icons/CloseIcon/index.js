@@ -2,8 +2,16 @@ import React from 'react';
 
 /**
  * @typedef {Object} CloseIconProps
- * @property {number} [size] - The size of the icon
- * @property {string} [color] - The color of the icon
+ * @property {number} [size] The size of the icon
+ * @property {string} [color] The color of the icon
+ */
+
+/**
+ * CloseIcon component
+ *
+ * @param {CloseIconProps} props
+ *
+ * @returns {React.ReactElement}
  */
 export default function CloseIcon ({ size = 24, color = 'currentColor' }) {
   return (

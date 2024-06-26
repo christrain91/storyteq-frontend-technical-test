@@ -7,6 +7,12 @@ import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import setupStore from '../../state/store';
 
+/**
+ * Renders the provided ui within a redux store provider
+ *
+ * @param {React.ReactElement} ui The ui to render within the providers
+ * @returns {Object} The rendered component selector functions and the store
+ */
 export function renderWithProviders (ui) {
   const store = setupStore();
 

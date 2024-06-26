@@ -3,8 +3,8 @@ import './style.scss';
 
 /**
  * @typedef {Object} VehicleCardProps
- * @property {VehicleSummaryPayload} vehicle - The vehicle to display
- * @property {(() => void)} onSelect -  On select handler
+ * @property {VehicleSummaryPayload} vehicle The vehicle to display
+ * @property {(() => void)} onSelect  On select handler
  */
 
 /**

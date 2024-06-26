@@ -8,6 +8,11 @@ import { show, hide } from '../../state/slices/vehicleDetailsSlice';
 
 import './style.scss';
 
+/**
+ * Component that fetches and displays a list of vehicles
+ *
+ * @returns {React.ReactElement}
+ */
 export default function VehicleList() {
   const [loading, error, vehicles] = useData();
   const { selectedVehicle, isOpen } = useSelector((state) => state.vehicleDetails);

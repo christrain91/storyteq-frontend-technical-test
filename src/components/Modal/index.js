@@ -6,11 +6,11 @@ import './style.scss';
 
 /**
  * @typedef {Object} ModalProps
- * @property {React.ReactElement | Array.<React.ReactElement>} children - The content of the modal
- * @property {string} title -  The modal title
- * @property {boolean} isOpen - The modal open state
- * @property {() => void} onClose - The modal close handler
- * @property {string} [testId] - The data-testid attribute
+ * @property {React.ReactElement | Array.<React.ReactElement>} children The content of the modal
+ * @property {string} title  The modal title
+ * @property {boolean} isOpen The modal open state
+ * @property {() => void} onClose The modal close handler
+ * @property {string} [testId] The data-testid attribute
  */
 
 /**

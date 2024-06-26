@@ -1,14 +1,14 @@
 import React from 'react';
 import Modal from '../Modal';
-import { toTitleCase } from '../../lib/util/string';
+import VehicleDetailItem from './components/VehicleDetailItem';
 
 import './styles.scss';
 
 /**
  * @typedef {Object} VehicleDetailsModalProps
- * @property {VehicleSummaryPayload} vehicle - The vehicle to display the details of
- * @property {boolean} isOpen - The modal open state
- * @property {() => void} onClose - The modal close handler
+ * @property {VehicleSummaryPayload} vehicle The vehicle to display the details of
+ * @property {boolean} isOpen The modal open state
+ * @property {() => void} onClose The modal close handler
  */
 
 /**
@@ -44,23 +44,4 @@ export default function VehicleDetailsModal ({ vehicle, isOpen, onClose }) {
       </section>
     </Modal>
   );
-}
-
-function VehicleDetailItem ({ label, values }) {
-  return (
-    <section className="vehicle-detail-item">
-      <h4>{label}</h4>
-      <ul>
-        {values.map((value) => (
-          <li key={value}>
-            <Tag>{toTitleCase(value)}</Tag>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-function Tag ({ children }) {
-  return <span className="tag">{children}</span>;
 }

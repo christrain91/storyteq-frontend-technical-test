@@ -3,60 +3,59 @@
 @import "../../styles/animations.scss";
 
 dialog {
-  background-color: #fff;
-  border: 0;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .1);
-  margin: 0 auto;
-  min-height: auto;
-  min-width: 85%;
-  padding: 0;
-  top: 10%;
-  width: 50%;
-
-  .dialog-title {
-
-    padding: 12px;
-
-    h2 {
-      font-size: 1.4rem;
-      margin: 0;
-      text-align: center;
-    }
-
-    button {
-      position: absolute;
-      right: 12px;
-      top: 12px;
-    }
-  }
-
-  .dialog-content {
-    padding: 24px;
-    padding: 0 0px;
-  }
-
-  .close-button {
-    background: none;
+    background-color: #fff;
     border: 0;
-    color: #666;
-    cursor: pointer;
-    font-size: 24px;
-  }
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    margin: 0 auto;
+    min-height: auto;
+    min-width: 85%;
+    padding: 0;
+    top: 10%;
+    width: 50%;
+
+    .dialog-title {
+
+        padding: 12px;
+
+        h2 {
+            font-size: 1.4rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        button {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+        }
+    }
+
+    .dialog-content {
+        padding: 24px;
+        padding: 0 0px;
+    }
+
+    .close-button {
+        background: none;
+        border: 0;
+        color: #666;
+        cursor: pointer;
+        font-size: 24px;
+    }
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, .4);
 }
 
 dialog[open] {
-  animation: scaleIn 200ms ease-in-out;
-  animation: fadeIn 200ms ease-in-out;
+    animation: scaleUp 300ms ease-in, fadeIn 400ms ease-in;
 }
 
 @media (min-width: $screen-size-tablet) {
 
-  dialog {
-    min-width: calc(640px - (15px * 2));
-  }
+    dialog {
+        min-width: calc(640px - (15px * 2));
+    }
 }

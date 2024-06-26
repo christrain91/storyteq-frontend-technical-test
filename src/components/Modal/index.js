@@ -35,8 +35,7 @@ export default function Modal ({
   }
 
   useEffect(() => {
-    const isValidModal = modalRef.current && modalRef.current.showModal && modalRef.current.close;
-    if (!isValidModal) return;
+    if (!modalRef.current) return;
 
     if (isOpen) {
       modalRef.current.showModal();
@@ -48,7 +47,7 @@ export default function Modal ({
   }, [isOpen]);
 
   return (
-    <dialog data-testid={testId || 'modal'} ref={modalRef} aria-modal="true" aria-label={title} className="dialog">
+    <dialog onClose={onClose} data-testid={testId || 'modal'} ref={modalRef} aria-modal="true" aria-label={title} className="dialog">
       <header className="dialog-title">
         <h2>{title}</h2>
         <IconButton

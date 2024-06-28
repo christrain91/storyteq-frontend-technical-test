@@ -31,7 +31,7 @@ export default function VehicleList() {
       <VehicleDetailsModal isOpen={isOpen} vehicle={selectedVehicle} onClose={() => dispatch(hide())} />
       <ul className="VehicleList" data-testid="results">
         {vehicles.map((vehicle) => (
-          <VehicleCard onSelect={() => dispatch(show(vehicle))} vehicle={vehicle} key={vehicle.id} />
+          <VehicleCard className={selectedVehicle && selectedVehicle.id === vehicle.id ? 'selected' : ''} onSelect={() => dispatch(show(vehicle))} vehicle={vehicle} key={vehicle.id} />
         ))}
       </ul>
     </section>

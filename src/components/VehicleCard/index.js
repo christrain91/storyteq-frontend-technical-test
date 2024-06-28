@@ -19,7 +19,7 @@ export default function VehicleCard ({ vehicle, onSelect }) {
 
   return (
     <li className="VehicleCard">
-      <div data-testid="vehicle" className="VehicleCardContent" onClick={onSelect} role="presentation">
+      <button type="button" data-testid="vehicle" className="VehicleCardContent" onClick={onSelect}>
         <figure data-testid="vehicle-image-container" className="ImageContainer">
           <img className="ImageWide" data-testid="vehicle-image-wide" src={wideImage.url} alt={wideImage.name} />
           <img className="ImageSquare" data-testid="vehicle-image-square" src={squareImage.url} alt={squareImage.name} />
@@ -37,7 +37,7 @@ export default function VehicleCard ({ vehicle, onSelect }) {
             {vehicle.description}
           </p>
         </div>
-      </div>
+      </button>
     </li>
   );
 }
